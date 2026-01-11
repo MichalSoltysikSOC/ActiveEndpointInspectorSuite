@@ -75,9 +75,8 @@ Core characteristics:
 
 (3) Optional session-only API key handling for:
 
-    /- VirusTotal (file hash reputation)
-    
-    /- AbuseIPDB (public IP reputation)
+    - VirusTotal (file hash reputation)
+        - AbuseIPDB (public IP reputation)
 
 (4) Consistent scan controls and workflow across all modules.
 
