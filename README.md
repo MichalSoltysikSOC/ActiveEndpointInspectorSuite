@@ -73,7 +73,10 @@ Core characteristics:
 
 (2) Centralized startup notices and API usage disclosures.
 
-(3) Optional session-only API key handling for: - VirusTotal (file hash reputation), - AbuseIPDB (public IP reputation)
+(3) Optional session-only API key handling for:
+
+VirusTotal (file hash reputation)
+AbuseIPDB (public IP reputation)
 
 (4) Consistent scan controls and workflow across all modules.
 
@@ -168,6 +171,8 @@ Services configured with Automatic and Automatic (Delayed Start) startup types.
 
 Service ImagePath and associated command-line parameters.
 
+<br>
+
 (2) Registry-based autostart entries (Run and RunOnce keys under):
 
 <br>
@@ -180,6 +185,8 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 
 HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
 
+<br>
+
 (3) Startup folders:
 
 <br>
@@ -187,6 +194,8 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
 Per-user Startup folder (shell:startup).
 
 System-wide Startup folder (shell:common startup).
+
+<br>
 
 (4) Scheduled Tasks:
 
@@ -197,6 +206,8 @@ Tasks triggered at system startup.
 Tasks triggered at user logon.
 
 Tasks configured for persistence through time-based or event-based triggers.
+
+<br>
 
 (5) WMI event subscription persistence:
 
