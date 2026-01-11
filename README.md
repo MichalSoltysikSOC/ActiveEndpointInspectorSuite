@@ -113,9 +113,8 @@ Usage Responsibility:
 
 (5) Users are strongly advised to review official documentation before use:
 
-https://docs.virustotal.com/reference/public-vs-premium-api
-
-https://docs.abuseipdb.com/#api-daily-rate-limits
+https://docs.virustotal.com/reference/public-vs-premium-api<br>
+https://docs.abuseipdb.com/#api-daily-rate-limits<br>
 
 <br>
 
@@ -145,9 +144,8 @@ Core characteristics:
 
 <br>
 
-VirusTotal (file hash reputation).
-
-AbuseIPDB (public IP reputation).
+VirusTotal (file hash reputation).<br>
+AbuseIPDB (public IP reputation).<br>
 
 <br>
 
