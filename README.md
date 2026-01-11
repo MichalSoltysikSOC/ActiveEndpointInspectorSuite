@@ -53,6 +53,76 @@ Tools included:
 
 Summary:
 
+Important Notice - External Reputation APIs:
+
+<br>
+
+This repository optionally integrates with third-party reputation services to enrich collected artifacts with contextual intelligence.
+
+<br>
+
+VirusTotal API:
+
+<br>
+
+(1) Supports both VirusTotal Public API and VirusTotal Premium API.
+
+(2) Public API limitations include:
+
+<br>
+
+4 requests per minute.
+
+500 requests per day.
+
+Personal, non-commercial use only.
+
+<br>
+
+(3) Public API keys must not be used in commercial products or business workflows.
+
+(4) Abuse of rate limits, account sharing, or automated bulk lookups may violate VirusTotal Terms of Service.
+
+(5) Reputation lookups are optional; the tool remains fully functional without an API key.
+
+<br>
+
+AbuseIPDB API:
+
+<br>
+
+(1) Used to retrieve reputation information for public IP addresses observed in active outbound connections.
+
+(2) API limits depend on the selected plan (Free, Basic, or Premium).
+
+(3) Free and lower-tier plans enforce daily request caps and reduced feature sets.
+
+(4) Excessive querying may result in rate limiting or temporary API blocking.
+
+(5) IP reputation lookups are optional; network inspection remains available without an API key.
+
+<br>
+
+Usage Responsibility:
+
+<br>
+
+(1) Before using the application, users must explicitly acknowledge and accept responsibility via mandatory notice dialogs displayed on first launch.
+
+(2) By accepting these notices, users confirm that they understand applicable API limits and licensing terms, are authorized to use the provided API keys, and accept full responsibility for how the tool and integrated services are used.
+
+(3) Users are responsible for ensuring their API key usage complies with the current Terms of Service of VirusTotal and AbuseIPDB.
+
+(4) API terms, limits, and licensing conditions may change over time.
+
+(5) Users are strongly advised to review official documentation before use:
+
+https://docs.virustotal.com/reference/public-vs-premium-api
+
+https://docs.abuseipdb.com/#api-daily-rate-limits
+
+<br>
+
 -----------------------------------------
 ActiveEndpointHash&IPInspector.exe
 -----------------------------------------
