@@ -51,8 +51,6 @@ Tools included:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Summary:
-
 Important Notice - External Reputation APIs:
 
 <br>
@@ -71,11 +69,9 @@ VirusTotal API:
 
 <br>
 
-4 requests per minute.
-
-500 requests per day.
-
-Personal, non-commercial use only.
+4 requests per minute.<br>
+500 requests per day.<br>
+Personal, non-commercial use only.<br>
 
 <br>
 
@@ -122,6 +118,8 @@ https://docs.virustotal.com/reference/public-vs-premium-api
 https://docs.abuseipdb.com/#api-daily-rate-limits
 
 <br>
+
+Summary:
 
 -----------------------------------------
 ActiveEndpointHash&IPInspector.exe
