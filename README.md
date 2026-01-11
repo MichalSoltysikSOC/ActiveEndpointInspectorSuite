@@ -155,7 +155,7 @@ AbuseIPDB (public IP reputation).<br>
 
 <br>
 
-The application itself does not perform scanning logic; it orchestrates and embeds the individual modules described below.
+Note: The application itself does not perform scanning logic; it orchestrates and embeds the individual modules described below.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -347,7 +347,7 @@ Continues hashing and reputation enrichment without restarting completed steps.
 
 <br>
 
-(4) Skip Mode:
+(4) Skip Mode - Skip Running Processes / Skip Active IP Checks / Skip Services / Skip Scheduled Tasks / Skip Current Items (depending on the selected tab):
 
 <br>
 
