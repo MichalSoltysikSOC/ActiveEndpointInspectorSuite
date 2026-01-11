@@ -2,7 +2,7 @@
 
 Author: Michal Soltysik
 
-Cybersecurity Analyst & Consultant | Digital Forensics Examiner | SOC Analyst | Blue Team Specialist
+Cybersecurity Analyst & Consultant | Forensics Examiner | SOC Trainer | Cyber Warfare Organizer
 
 Official website: https://michalsoltysik.com/
 
