@@ -303,7 +303,7 @@ Preserves all collected metadata, hashes, and reputation results for reporting a
 
 <br>
 
-No destructive actions are performed by any module.
+Note: No destructive actions are performed by any module.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -315,17 +315,16 @@ This repository is intended for:
 
 <br>
 
-(1) SOC laboratories.
+(1) SOC laboratories and training environments.
 
-(2) Blue Team operations.
+(2) Blue Team operations in both test and production environments.
 
-(3) Threat hunting and detection engineering.
+(3) Threat hunting and detection engineering activities.
 
-(4) Malware analysis and post-execution inspection.
+(4) Malware analysis and post-execution inspection in controlled scenarios.
 
-(5) DFIR investigations.
+(5) DFIR investigations and incident response triage (post-compromise endpoint inspection).
 
-(6) Controlled and authorized environments.
-
+(6) Production endpoints for baseline creation and continuous inspection, provided no malicious code is intentionally executed.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
