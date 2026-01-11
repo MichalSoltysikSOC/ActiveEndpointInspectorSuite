@@ -28,13 +28,15 @@ License: Free for personal and commercial use.
 
 Repository overview:
 
-This repository contains a Windows endpoint inspection suite designed to operate across endpoints running Windows operating systems.  
-The suite focuses on live endpoint visibility, persistence discovery, and rapid triage by combining local artifact collection with optional reputation enrichment.
+This repository contains a Windows endpoint inspection suite designed for endpoints running Windows operating systems.  
+The suite combines live endpoint visibility, persistence discovery, and network context with optional reputation enrichment.
 
 <br>
 
-Modules included:
+Tools included:
 
+(0) Active Endpoint Hash & IP Inspector - 5-Module Suite  
+<br>
 (1) Active SHA-256 Hash Checker  
 <br>
 (2) Active Public IP Checker  
@@ -47,40 +49,29 @@ Modules included:
 
 <br>
 
-Each module runs as a dedicated tab inside a single unified application:
-
-Active Endpoint Hash & IP Inspector - 5-Module Suite
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-General purpose:
+Summary:
 
-The suite is designed to support:
+-----------------------------------------
+Active Endpoint Hash & IP Inspector
+-----------------------------------------
 
-- Endpoint baseline creation
-- Threat hunting and anomaly detection
-- Malware analysis and post-execution inspection
-- Blue Team operations in SOC labs and controlled environments
-- Rapid comparison of endpoint state before and after suspicious activity
+This is the main application and unified entry point for the entire toolkit.
 
-The tools are intentionally read-focused and do not perform remediation, deletion, or system modification beyond optional API-based reputation lookups.
+It provides a single tabbed interface that hosts all five inspection modules, allowing analysts to switch between endpoint perspectives without launching multiple executables.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Core characteristics:
 
-API usage notice:
+- Unified Windows GUI hosting all modules as tabs
+- Centralized startup notices and API usage disclosures
+- Optional session-only API key handling for:
+  - VirusTotal (file hash reputation)
+  - AbuseIPDB (public IP reputation)
+- Consistent scan controls and workflow across all modules
+- Designed for baseline creation followed by delta-based threat hunting
 
-Some modules optionally integrate with external reputation services:
-
-- VirusTotal (file hash reputation)
-- AbuseIPDB (public IP address reputation)
-
-API keys are optional and are only stored as environment variables for the current execution session.
-
-If API keys are not provided:
-- All local collection, hashing, and enumeration features remain fully functional.
-- Reputation columns will display clear error or unavailable states.
-
-Users must comply with the respective Terms of Service and licensing conditions of VirusTotal and AbuseIPDB.
+The application itself does not perform scanning logic; it orchestrates and embeds the individual modules described below.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -92,10 +83,10 @@ Active SHA-256 Hash Checker
 
 Enumerates currently running processes and:
 
-- Extracts executable paths
-- Computes SHA-256 hashes of active binaries
+- Extracts executable paths of active processes
+- Computes SHA-256 hashes of in-memory binaries
 - Optionally queries VirusTotal for file reputation
-- Appends only new processes between scans to support baseline comparison
+- Appends only newly observed processes between scans to support baseline comparison
 
 -----------------------------------------
 Active Public IP Checker
@@ -103,8 +94,8 @@ Active Public IP Checker
 
 Enumerates active TCP connections and:
 
-- Filters to public remote IP addresses only
-- Correlates connections with owning processes (PID, name, path)
+- Filters connections to public remote IP addresses only
+- Correlates each connection with the owning process
 - Optionally queries AbuseIPDB for IP reputation
 - Supports detection of newly established outbound connections
 
@@ -116,9 +107,8 @@ Enumerates Windows services and:
 
 - Extracts service executables and command lines
 - Computes SHA-256 hashes of service binaries
-- Identifies startup type and service state
+- Identifies service startup type and current state
 - Optionally enriches hashes with VirusTotal reputation
-- Supports detection of newly added or modified services
 
 -----------------------------------------
 Scheduled Task Hash Checker
@@ -126,29 +116,28 @@ Scheduled Task Hash Checker
 
 Enumerates Windows Scheduled Tasks and:
 
-- Expands tasks into individual actions
-- Extracts executables and command lines per action
-- Collects trigger information (boot, logon, time-based, etc.)
-- Computes SHA-256 hashes of task binaries
-- Optionally queries VirusTotal
-- Designed for scheduled-task persistence analysis
+- Expands tasks into individual executable actions
+- Collects trigger information (boot, logon, scheduled, event-based)
+- Computes SHA-256 hashes of task action binaries
+- Optionally queries VirusTotal for reputation data
 
 -----------------------------------------
 Autostart Hash Checker
 -----------------------------------------
 
-Aggregates common Windows autostart persistence locations, including:
+Aggregates common Windows persistence mechanisms, including:
 
-- Services (automatic and delayed start)
+- Services (Automatic and Delayed Start)
 - Registry Run and RunOnce keys (HKLM and HKCU)
-- Startup folders (user and machine)
+- Startup folders (User and Machine)
 - Scheduled tasks with startup or logon triggers
 - WMI event subscription persistence
 
-For each entry, the tool:
-- Resolves the executed binary
-- Computes a SHA-256 hash
-- Optionally enriches the result with VirusTotal reputation
+For each entry, the module:
+
+- Resolves the executed binary or script
+- Computes a SHA-256 hash where applicable
+- Optionally enriches results with VirusTotal reputation
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -157,12 +146,12 @@ Operational model:
 All modules follow a consistent workflow:
 
 - Start New Scan builds or extends the current baseline
-- Cancel pauses long-running scans safely
+- Cancel safely pauses long-running scans
 - Continue Scanning resumes from the exact previous position
-- Skip mode switches scanning to new artifacts only
-- Save Results exports findings to CSV for reporting or further analysis
+- Skip mode switches scanning to newly introduced artifacts only
+- Save Results exports findings to CSV for reporting and analysis
 
-No destructive actions are performed.
+No destructive actions are performed by any module.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -172,14 +161,13 @@ This repository is intended for:
 
 - SOC laboratories
 - Blue Team operations
+- Threat hunting and detection engineering
+- Malware analysis and post-execution inspection
 - DFIR investigations
-- Malware research
-- Detection engineering
-- Controlled and authorized test environments
+- Controlled and authorized environments
 
-Use in production environments is possible for inspection and visibility purposes, but all execution must comply with organizational security policies and applicable laws.
+Execution must always comply with organizational security policies and applicable laws.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-say which version and I will refine it precisely.
+* add a **Quick Start** section
+* or prepare a **professional disclaimer block** aligned with SOC and DFIR standards
