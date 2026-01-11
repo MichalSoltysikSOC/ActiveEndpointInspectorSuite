@@ -77,9 +77,9 @@ Core characteristics:
 
 <br>
 
-VirusTotal (file hash reputation)
+VirusTotal (file hash reputation).
 
-AbuseIPDB (public IP reputation)
+AbuseIPDB (public IP reputation).
 
 <br>
 
@@ -143,6 +143,8 @@ Enumerates Windows services and:
 
 (4) Optionally enriches hashes with VirusTotal reputation.
 
+(5) Appends only newly created services to support baseline comparison and persistence detection.
+
 -----------------------------------------
 ScheduledTaskHashChecker.exe
 -----------------------------------------
@@ -158,6 +160,8 @@ Enumerates Windows Scheduled Tasks and:
 (3) Computes SHA-256 hashes of task action binaries.
 
 (4) Optionally queries VirusTotal for reputation data.
+
+(5) Appends only newly detected scheduled tasks to enable reliable baseline comparison and detection of newly introduced persistence mechanisms.
 
 -----------------------------------------
 AutostartHashChecker.exe
@@ -235,6 +239,8 @@ For each entry, the module:
 
 (3) Optionally enriches results with VirusTotal reputation.
 
+(4) Appends and evaluates only newly introduced autostart entries to enable accurate baseline comparison and detection of persistence added after initial execution.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Operational model:
@@ -245,15 +251,55 @@ All modules follow a consistent workflow:
 
 <br>
 
-(1) Start New Scan builds or extends the current baseline.
+(1) Start New Scan:
 
-(2) Cancel safely pauses long-running scans.
+<br>
 
-(3) Continue Scanning resumes from the exact previous position.
+Performs initial enumeration and establishes a baseline on first execution.
 
-(4) Skip mode switches scanning to newly introduced artifacts only.
+On subsequent executions, extends the existing baseline by appending only newly observed artifacts.
 
-(5) Save Results exports findings to CSV for reporting and analysis.
+<br>
+
+(2) Cancel:
+
+<br>
+
+Safely pauses long-running enumeration, hashing, or reputation lookups.
+
+Preserves all collected data and scan progress without data loss.
+
+<br>
+
+(3) Continue Scanning:
+
+<br>
+
+Resumes the scan from the exact point where it was paused.
+
+Continues hashing and reputation enrichment without restarting completed steps.
+
+<br>
+
+(4) Skip Mode:
+
+<br>
+
+Stops processing already observed artifacts.
+
+Switches scanning logic to newly introduced artifacts only.
+
+Ensures reliable baseline comparison and clean detection of changes between executions.
+
+<br>
+
+(5) Save Results:
+
+<br>
+
+Exports the current view to a CSV file.
+
+Preserves all collected metadata, hashes, and reputation results for reporting and analysis.
 
 <br>
 
