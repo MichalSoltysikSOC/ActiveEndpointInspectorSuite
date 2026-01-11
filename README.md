@@ -79,7 +79,7 @@ Personal, non-commercial use only.<br>
 
 (4) Abuse of rate limits, account sharing, or automated bulk lookups may violate VirusTotal Terms of Service.
 
-(5) Reputation lookups are optional; the tool remains fully functional without an API key.
+(5) Reputation lookups are optional; the tool remains fully functional without an API key, and only the final reputation column on the right is left empty when no API data is available.
 
 <br>
 
