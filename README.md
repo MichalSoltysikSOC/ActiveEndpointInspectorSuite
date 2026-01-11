@@ -35,13 +35,16 @@ The suite combines live endpoint visibility, persistence discovery, and network 
 
 Tools included:
 
+(0) Active Endpoint Hash & IP Inspector - 5-Module Suite
 <br>
-
-(0) Active Endpoint Hash & IP Inspector - 5-Module Suite  
 (1) Active SHA-256 Hash Checker  
+<br>
 (2) Active Public IP Checker  
+<br>
 (3) Service Hash Checker  
+<br>
 (4) Scheduled Task Hash Checker  
+<br>
 (5) Autostart Hash Checker  
 
 <br>
