@@ -95,7 +95,7 @@ AbuseIPDB API:
 
 (4) Excessive querying may result in rate limiting or temporary API blocking.
 
-(5) IP reputation lookups are optional; network inspection remains available without an API key.
+(5) IP reputation lookups are optional; without an API key, network inspection remains available and only the final reputation column is left empty.
 
 <br>
 
