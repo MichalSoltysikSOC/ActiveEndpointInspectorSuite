@@ -66,8 +66,8 @@ Core characteristics:
 (1) Unified Windows GUI hosting all modules as tabs
 (2) Centralized startup notices and API usage disclosures
 (3) Optional session-only API key handling for:
-\- VirusTotal (file hash reputation)
-\- AbuseIPDB (public IP reputation)
+    - VirusTotal (file hash reputation)
+    - AbuseIPDB (public IP reputation)
 (4) Consistent scan controls and workflow across all modules
 (5) Designed for baseline creation followed by delta-based threat hunting
 
