@@ -155,6 +155,8 @@ AbuseIPDB (public IP reputation).<br>
 
 (5) Designed for baseline creation followed by delta-based threat hunting.
 
+(6) Supports exporting module results to CSV files for reporting, investigation, and offline analysis.
+
 <br>
 
 Note: The application itself does not perform scanning logic; it orchestrates and embeds the individual modules described below.
