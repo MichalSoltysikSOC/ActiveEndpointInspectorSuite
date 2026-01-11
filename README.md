@@ -54,7 +54,7 @@ Tools included:
 Summary:
 
 -----------------------------------------
-Active Endpoint Hash & IP Inspector
+ActiveEndpointHash&IPInspector.exe
 -----------------------------------------
 
 This is the main application and unified entry point for the entire toolkit.
@@ -88,7 +88,7 @@ The application itself does not perform scanning logic; it orchestrates and embe
 Module summary:
 
 -----------------------------------------
-Active SHA-256 Hash Checker
+ActiveSHA256HashChecker.exe
 -----------------------------------------
 
 Enumerates currently running processes and:
@@ -104,7 +104,7 @@ Enumerates currently running processes and:
 (4) Appends only newly observed processes between scans to support baseline comparison.
 
 -----------------------------------------
-Active Public IP Checker
+ActivePublicIPChecker.exe
 -----------------------------------------
 
 Enumerates active TCP connections and:
@@ -120,7 +120,7 @@ Enumerates active TCP connections and:
 (4) Supports detection of newly established outbound connections.
 
 -----------------------------------------
-Service Hash Checker
+ServiceHashChecker.exe
 -----------------------------------------
 
 Enumerates Windows services and:
@@ -136,7 +136,7 @@ Enumerates Windows services and:
 (4) Optionally enriches hashes with VirusTotal reputation.
 
 -----------------------------------------
-Scheduled Task Hash Checker
+ScheduledTaskHashChecker.exe
 -----------------------------------------
 
 Enumerates Windows Scheduled Tasks and:
@@ -152,22 +152,62 @@ Enumerates Windows Scheduled Tasks and:
 (4) Optionally queries VirusTotal for reputation data.
 
 -----------------------------------------
-Autostart Hash Checker
+AutostartHashChecker.exe
 -----------------------------------------
 
 Aggregates common Windows persistence mechanisms, including:
 
 <br>
+<br>
 
-(1) Services (Automatic and Delayed Start).
+(1) Windows Services:
 
-(2) Registry Run and RunOnce keys (HKLM and HKCU).
+<br>
 
-(3) Startup folders (User and Machine).
+Services configured with Automatic and Automatic (Delayed Start) startup types.
 
-(4) Scheduled tasks with startup or logon triggers.
+Service ImagePath and associated command-line parameters.
 
-(5) WMI event subscription persistence.
+(2) Registry-based autostart entries (Run and RunOnce keys under):
+
+<br>
+
+HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+
+HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+(3) Startup folders:
+
+<br>
+
+Per-user Startup folder (shell:startup).
+
+System-wide Startup folder (shell:common startup).
+
+(4) Scheduled Tasks:
+
+<br>
+
+Tasks triggered at system startup.
+
+Tasks triggered at user logon.
+
+Tasks configured for persistence through time-based or event-based triggers.
+
+(5) WMI event subscription persistence:
+
+<br>
+
+Permanent event subscriptions (Event Filters, Consumers, and Bindings).
+
+Execution of commands or scripts in response to system or user events.
+
+<br>
+<br>
 
 For each entry, the module:
 
@@ -225,8 +265,5 @@ This repository is intended for:
 
 (6) Controlled and authorized environments.
 
-<br>
-
-Execution must always comply with organizational security policies and applicable laws.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
