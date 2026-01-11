@@ -238,7 +238,6 @@ AutostartHashChecker.exe
 Aggregates common Windows persistence mechanisms, including:
 
 <br>
-<br>
 
 (1) Windows Services:
 
