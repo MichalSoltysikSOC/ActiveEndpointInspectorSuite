@@ -100,4 +100,5 @@ LinkedIn: https://www.linkedin.com/in/michal-soltysik-ssh-soc/
 Cybersecurity content: https://www.youtube.com/playlist?list=PL0RdRWQWldOAAKBqOVEutxKMP-a6CNoLY
 Accredible: https://www.credential.net/profile/michalsoltysik/wallet
 Credly: https://www.credly.com/users/michal-soltysik
+
 Email: me@michalsoltysik.com
