@@ -123,7 +123,7 @@ https://docs.abuseipdb.com/#api-daily-rate-limits<br>
 Summary:
 
 -----------------------------------------
-ActiveEndpointHash&IPInspector.exe
+ActiveEndpointHash&IPInspectorv1.1.exe
 -----------------------------------------
 
 This is the main application and unified entry point for the entire toolkit.
@@ -155,7 +155,9 @@ AbuseIPDB (public IP reputation).<br>
 
 (5) Designed for baseline creation followed by delta-based threat hunting.
 
-(6) Supports exporting module results to CSV files for reporting, investigation, and offline analysis.
+(6) Uses a persistent color legend and consistent row coloring across all modules to clearly distinguish baseline state from post-baseline changes.
+
+(7) Supports exporting module results to CSV files for reporting, investigation, and offline analysis.
 
 <br>
 
@@ -166,14 +168,14 @@ Note: The application itself does not perform scanning logic; it orchestrates an
 Module summary:
 
 -----------------------------------------
-ActiveSHA256HashChecker.exe
+ActiveSHA256HashCheckerv1.1.exe
 -----------------------------------------
 
 Enumerates currently running processes and:
 
 <br>
 
-(1) Extracts executable paths of active processes.
+(1) Extracts full command line arguments and executable paths of active processes.
 
 (2) Computes SHA-256 hashes of in-memory binaries.
 
@@ -181,8 +183,10 @@ Enumerates currently running processes and:
 
 (4) Appends only newly observed processes between scans to support baseline comparison.
 
+(5) Uses a persistent color legend and consistent row coloring to visually distinguish baseline processes (light green) from newly observed processes (light red) across scans.
+
 -----------------------------------------
-ActivePublicIPChecker.exe
+ActivePublicIPCheckerv1.1.exe
 -----------------------------------------
 
 Enumerates active TCP connections and:
@@ -197,8 +201,10 @@ Enumerates active TCP connections and:
 
 (4) Supports detection of newly established outbound connections.
 
+(5) Uses a persistent color legend and consistent row coloring to visually distinguish baseline processes (light green) from newly observed processes (light red) across scans.
+
 -----------------------------------------
-ServiceHashChecker.exe
+ServiceHashCheckerv1.1.exe
 -----------------------------------------
 
 Enumerates Windows services and:
@@ -215,8 +221,10 @@ Enumerates Windows services and:
 
 (5) Appends only newly created services to support baseline comparison and persistence detection.
 
+(6) Uses a persistent color legend and consistent row coloring to visually distinguish baseline processes (light green) from newly observed processes (light red) across scans.
+
 -----------------------------------------
-ScheduledTaskHashChecker.exe
+ScheduledTaskHashCheckerv1.1.exe
 -----------------------------------------
 
 Enumerates Windows Scheduled Tasks and:
@@ -233,8 +241,10 @@ Enumerates Windows Scheduled Tasks and:
 
 (5) Appends only newly detected scheduled tasks to enable reliable baseline comparison and detection of newly introduced persistence mechanisms.
 
+(6) Uses a persistent color legend and consistent row coloring to visually distinguish baseline processes (light green) from newly observed processes (light red) across scans.
+
 -----------------------------------------
-AutostartHashChecker.exe
+AutostartHashCheckerv1.1.exe
 -----------------------------------------
 
 Aggregates common Windows persistence mechanisms, including:
@@ -309,6 +319,8 @@ For each entry, the module:
 (3) Optionally enriches results with VirusTotal reputation.
 
 (4) Appends and evaluates only newly introduced autostart entries to enable accurate baseline comparison and detection of persistence added after initial execution.
+
+(5) Uses a persistent color legend and consistent row coloring to visually distinguish baseline processes (light green) from newly observed processes (light red) across scans.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
